@@ -1,20 +1,20 @@
 #define MyAppName "Icons"
 #define MyAppVersion "1.0.0"
 #define MyAppPublisher "Between Bytes Software"
-#define MyAppExeName "Icons.exe"
-#define ReleaseDir "icons.exe"
-#define AppIcon "icons.png"
+#define MyAppExeName "icons.exe"
+#define ReleaseDir "build\bin"
+#define AppIcon "build\windows\icon.ico"
 
 #if !FileExists(AddBackslash(SourcePath) + ReleaseDir + "\" + MyAppExeName)
-  #error "The Windows release executable is missing. Run 'flutter build windows --release' before compiling this installer."
+  #error "The Windows release executable is missing. Run 'go run github.com/wailsapp/wails/v2/cmd/wails@v2.16.0 build -platform windows/amd64' before compiling this installer."
 #endif
 
 #if !FileExists(AddBackslash(SourcePath) + AppIcon)
-  #error "The installer icon is missing: icons.png"
+  #error "The installer icon is missing: build\windows\icon.ico"
 #endif
 
 [Setup]
-AppId={{9B44F321-729D-4F8F-B501-D3EBBF857C0C}
+AppId={{9B44F321-729D-4F8F-B501-D3EBBF857C0W}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppVerName={#MyAppName} {#MyAppVersion}
@@ -23,7 +23,7 @@ AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 
 ; Install in:
-; C:\Program Files (x86)\Between Bytes Software\Icons
+; Uses the architecture-appropriate Program Files directory.
 DefaultDirName={commonpf32}\{#MyAppPublisher}\Icons
 
 DefaultGroupName={#MyAppName}
