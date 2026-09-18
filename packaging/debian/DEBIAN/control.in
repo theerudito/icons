@@ -1,0 +1,9 @@
+Package: icons
+Version: @VERSION@
+Section: graphics
+Priority: optional
+Architecture: amd64
+Depends: libgtk-3-0 (>= 3.24), libwebkit2gtk-4.1-0 (>= 2.40)
+Maintainer: Jorge Loor <erudito.tv@gmail.com>
+Description: Icons generator
+ Generate and export application icons.

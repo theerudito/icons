@@ -1,4 +1,6 @@
 build/bin
+build/deb
+build/installer/*.deb
 node_modules
 frontend/dist
 *.exe
